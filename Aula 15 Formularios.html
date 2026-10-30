@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 14 Formularios</title>
+    <link rel="stylesheet" href="mystyle.css">
+    <style>
+        th{
+            text-align: justify;
+        }
+        .container {
+    display: flex;
+    gap: 20px;
+}
+
+.esquerda {
+    width: 50%;
+
+}
+
+.direita {
+    width: 50%;
+
+}
+    </style>
+
+</head>
+<body>
+    <header>
+        <h1>Formularios</h1>
+    </header>
+    <nav>
+
+    </nav>
+    <main>
+        <div class="container">
+            <div class="esquerda">
+                <table>
+                    <form>
+                        <tr>
+                            <th colspan="2">Dados Pessoais:</th>
+                        </tr>
+                        <tr>
+                    <td>Nome:</td>
+                    <td><input type="text" name="nome" id="nome"></td>
+                </tr>
+                <tr>
+                    <td>Data de Nascimento</td>
+                    <td> <input type="date" name="datan" id="datan"></td>
+                </tr>
+                <tr>
+                    <td>E-mail:</td>
+                    <td> <input type="email" name="mail" id="mail"></td>
+                </tr>
+                <tr>
+                    <td>Documento:</td>
+                    <td> <input type="text" name="doc" id="doc"></td>
+                </tr>
+                <tr>
+                    <th colspan="2">Endereço</th>
+                </tr>
+                <tr>
+                    <td>Rua:</td>
+                    <td> <input type="text" name="rua" id="rua"></td>
+                </tr>
+                <tr>
+                    <td>Numero:</td>
+                    <td> <input type="number" name="nu" id="nu"></td>
+                </tr>
+                <tr>
+                    <td>Bairro:</td>
+                    <td> <input type="text" name="bai" id="bai"></td>
+                </tr>
+                <tr>
+                    <td>Cidade</td>
+                    <td> <input type="text" name="city" id="city"></td>
+                </tr>
+                <tr>
+                    <td>CEP:</td>
+                    <td><input type="text" name="cep1" id="cep1" size="9"> - <input type="text" name="cep2" id="cep2" size="4"></td>
+                </tr>
+                <tr><th colspan="2">Cursos</th></tr>
+                <tr>
+                    <td colspan="2">Qual Curso de TI você esta fazendo?</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="curso" id="curso" value="cl">Curso Livre<td></td></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="curso" id="curso" value="tec">Curso Tecnico<td></td></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="curso" id="curso" value="grad">Graduação<td></td></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Quais Linguagens de programação você gosta ?</td>
+                </tr>
+                <tr>
+                    <td> <input type="checkbox" name="html" id="html" value="html"> HTML<td></td></td>
+                </tr>
+                <tr>
+                    <td> <input type="checkbox" name="php" id="php" value="php"> PHP<td></td></td>
+                </tr>
+                <tr>
+                    <td> <input type="checkbox" name="js" id="js" value="js"> JavaScript<td></td></td>
+                </tr>
+                <tr>
+                    <td> <input type="checkbox" name="phyt" id="phyt" value="phyt"> Phyton<td></td></td>
+                </tr>
+                <tr>
+                    <td> <input type="checkbox" name="java" id="java" value="java"> Java<td></td></td>
+                </tr>
+                <tr>
+                    <th colspan="2">Qual carreira vc quer seguir no TI?</th>
+                </tr> 
+                <tr>
+                    <td>
+                        <select name="cargo" id="cargo">
+                            <option value="">ESCOLHA SUA CARREIRA</option>
+                            <option value="prog">Programador</option>
+                            <option value="anal">Analista de Sitemas</option>
+                            <option value="desg">Designer</option>
+                            <option value="anald">Analista de Dados</option>
+                        </select>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><input type="reset" value="LIMPAR"></td>
+                    <td> <button type="submit" onclick="ler()">ENVIAR</button></td>
+                </tr>                                               
+            </form>
+        </table></div>
+
+        <div  class="direita" id="mostra"></div>
+
+    </main>
+    <footer>
+        <h2 >Formularios <p class="rgb">!Ruivo</p></h2>
+    </footer>
+    <script>
+        function ler() {
+            let nome = document.getElementById("nome").value;
+            let datan = document.getElementById("datan").value;
+            let mail = document.getElementById("mail").value;
+            let doc = document.getElementById("doc").value;
+            let rua = document.getElementById("rua").value;
+            let nu = document.getElementById("nu").value;
+            let bai = document.getElementById("bai").value;
+            let city = document.getElementById("city").value;
+            let cep1 = document.getElementById("cep1").value;
+            let cep2 = document.getElementById("cep2").value;
+            let curso = document.querySelector('input[name="curso"]:checked') ? document.querySelector('input[name="curso"]:checked').value : "Nenhum curso selecionado";
+            let html = document.getElementById("html").checked;
+            let php = document.getElementById("php").checked;
+            let js = document.getElementById("js").checked;
+            let phyt = document.getElementById("phyt").checked;
+            let java = document.getElementById("java").checked;
+            let cargo = document.getElementById("cargo").value;
+               
+
+            document.getElementById("mostra").innerHTML = `
+                <p>Nome: ${nome}</p>
+                <p>Data de Nascimento: ${datan}</p>
+                <p>Email: ${mail}</p>
+                <p>Documento: ${doc}</p>
+                <p>Rua: ${rua}</p>
+                <p>Número: ${nu}</p>
+                <p>Bairro: ${bai}</p>
+                <p>Cidade: ${city}</p>
+                <p>CEP: ${cep1}-${cep2}</p>
+                <p>Curso: ${curso}</p>
+                <p>Linguagens de programação:</p>
+                <ul>
+                    ${html ? '<li>HTML</li>' : ''}
+                    ${php ? '<li>PHP</li>' : ''}
+                    ${js ? '<li>JavaScript</li>' : ''}
+                    ${phyt ? '<li>Phyton</li>' : ''}
+                    ${java ? '<li>Java</li>' : ''}
+                </ul>
+                <p>Cargo: ${cargo}</p>
+            `;
+
+        }
+        
+    </script>
+</body> 
+</html>

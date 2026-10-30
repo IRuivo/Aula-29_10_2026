@@ -85,13 +85,13 @@
                     <td colspan="2">Qual Curso de TI você esta fazendo?</td>
                 </tr>
                 <tr>
-                    <td><input type="radio" name="curso" id="curso" value="cl">Curso Livre<td></td></td>
+                    <td><input type="radio" name="curso" id="curso" value="CursoLivre">Curso Livre<td></td></td>
                 </tr>
                 <tr>
-                    <td><input type="radio" name="curso" id="curso" value="tec">Curso Tecnico<td></td></td>
+                    <td><input type="radio" name="curso" id="curso" value="Tecnico">Curso Tecnico<td></td></td>
                 </tr>
                 <tr>
-                    <td><input type="radio" name="curso" id="curso" value="grad">Graduação<td></td></td>
+                    <td><input type="radio" name="curso" id="curso" value="Graduação">Graduação<td></td></td>
                 </tr>
                 <tr>
                     <td colspan="2">Quais Linguagens de programação você gosta ?</td>
@@ -118,10 +118,10 @@
                     <td>
                         <select name="cargo" id="cargo">
                             <option value="">ESCOLHA SUA CARREIRA</option>
-                            <option value="prog">Programador</option>
-                            <option value="anal">Analista de Sitemas</option>
-                            <option value="desg">Designer</option>
-                            <option value="anald">Analista de Dados</option>
+                            <option value="Programador">Programador</option>
+                            <option value="AnalistaSitemas">Analista de Sitemas</option>
+                            <option value="Designer">Designer</option>
+                            <option value="Analista de Dados">Analista de Dados</option>
                         </select>
                     </td>
                     <td></td>
@@ -159,6 +159,19 @@
             let phyt = document.getElementById("phyt").checked;
             let java = document.getElementById("java").checked;
             let cargo = document.getElementById("cargo").value;
+
+           //           let curso = "";
+           // if (document.getElementById("cl").checked) {
+           //     curso = document.getElementById("cl").value;
+           // } else if (document.getElementById("ct").checked) {
+           //     curso = document.getElementById("ct").value;
+           // } else if (document.getElementById("cr").checked) {
+           //     curso = document.getElementById("cr").value;
+           // }
+            //let html = "";
+            //if (document.getElementById("html").checked) {
+            //    html = "Sim";}else{html = "Não";}
+            //}
                
 
             document.getElementById("mostra").innerHTML = `
